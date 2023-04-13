@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: meu-deplyment
 spec:
-  replicas: 7
   selector:
     matchLabels:
       app: exemplo
