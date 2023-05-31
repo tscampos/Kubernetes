@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-deploy-ingress
+spec:
+  rules:
+  - host: api.aula.kubedev.io
+    https:
+     path:
+      - backend:
+          serviceName: api-versao-service
+          servicePort: 80
+          
