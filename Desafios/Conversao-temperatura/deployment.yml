@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conversao-temp-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: conversao-temp
+  template:
+    metadata:
+      labels:
+        app: conversao-temp
+    spec:
+      containers:
+      - name: conversao-temperatura
+        image: tscampos/conversao-temperatura:v1
+        resources: {}
+        ports:
+        - containerPort: 8080
