@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: tscampos/pedelogo-catalogo:v1.0.0
+        image: tscampos/rotten-potatoes:v1
         ports:
         - containerPort: 5000
         resources: {}
