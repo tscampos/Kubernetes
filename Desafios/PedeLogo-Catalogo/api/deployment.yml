@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: tscampos/pedelogo-catalogo:v1.0.0
+        ports:
+        - containerPort: 80
+        resources: {}
+        env:
+          - name: mongo__Host
+            value: mongo-service
+          - name: mongo__User
+            value: mongodbuser
+          - name: mongo__Password
+            value: mongodbpwd
+          - name: mongo__port
+            value: "27017"
+          - name: mongo__DataBase
+            value: "admin"
