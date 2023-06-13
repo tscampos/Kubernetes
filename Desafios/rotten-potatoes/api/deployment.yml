@@ -19,13 +19,13 @@ spec:
         - containerPort: 5000
         resources: {}
         env:
-          - name: mongo__Host
+          - name: MONGODB_HOST
             value: mongo-service
-          - name: mongo__User
+          - name: MONGODB_USERNAME
             value: mongodbuser
-          - name: mongo__Password
+          - name: MONGODB_PASSWORD
             value: mongodbpwd
-          - name: mongo__port
+          - name: MONGODB_PORT
             value: "27017"
-          - name: mongo__DataBase
+          - name: MONGODB_DB
             value: "admin"
